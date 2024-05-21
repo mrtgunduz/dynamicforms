@@ -1,1 +1,17 @@
-.
+<div class="container">
+  <form [formGroup]="orderForm">
+    <div formArrayName="items" *ngFor="let item of items.controls; let i = index" class="mb-3 row align-items-center">
+      <div [formGroupName]="i" class="col-md-8">
+        <input formControlName="name" placeholder="Item name" class="form-control" />
+      </div>
+      <div class="col-md-2">
+        <button type="button" class="btn btn-secondary w-100" (click)="addItem()">Ekle</button>
+      </div>
+      <div class="col-md-2">
+        <button type="button" class="btn btn-danger w-100" (click)="deleteItem(i)">Sil</button>
+      </div>
+    </div>
+    
+    
+  </form>
+</div>
